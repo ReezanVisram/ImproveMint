@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container text-center">
+        <h1>Welcome {{ name }}</h1>
+    </div>
+
+    <div class="task-habit-container">
+        <div class="dashboard-task-container">
+            <h2>Your Current Tasks:</h2>
+            <ul>
+                {% for task in tasks %}
+                    <li>{{ task.task }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    
+        <div class="dashboard-habit-container">
+            <h2>Your Current Habits:</h2>
+            <ul>
+                {% for habit in habits %}
+                    <li>Hello!</li>
+                    <p>Done for {{ habit.daysDone }} Days</p>
+                {% endfor %}
+            </ul>
+    
+        </div>
+    </div>
+
+{% endblock content %}
