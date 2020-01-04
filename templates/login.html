@@ -5,6 +5,10 @@
     <form method="POST" action="/login">
         <div class="sign-in-container container">
             <h2 class="form-signin-heading text-center">Login</h2>
+
+            {% if error is defined %}
+                <p>{{ error }}</p>
+            {% endif %}
             {{ form.hidden_tag() }}
             {{ wtf.form_field(form.username) }}
             {{ wtf.form_field(form.password) }}

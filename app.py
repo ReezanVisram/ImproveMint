@@ -7,14 +7,11 @@ from wtforms import StringField, PasswordField, BooleanField, IntegerField
 from wtforms.validators import InputRequired, Email, Length
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime, timedelta
+import os
 
 app = Flask(__name__)
-if app.config['ENV'] == "production":
-    app.config.from_object("config.ProductionConfig")
-    
-elif app.config['ENV'] == "development":
-    app.config.from_object('config.DevelopmentConfig')
-
+app.secret_key = os.urandom(24)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///productiondatabase.db'
 
 Bootstrap(app)
 db = SQLAlchemy(app)
@@ -101,7 +98,7 @@ def login():
                 login_user(user, remember=form.remember.data)
                 return redirect(url_for('dashboard'))
 
-        return '<h1>Invalid Username or Password</h1>'
+        return render_template('login.html', form=form, error="Invalid Username or Password")
     
     return render_template('login.html', form=form)
 
