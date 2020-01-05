@@ -55,6 +55,14 @@
   display: flex;
 }
 
+.dashboard-task-container{
+  margin: auto;
+}
+
+.dashboard-habit-container{
+  margin: auto;
+}
+
 .task-container{
   display: flex;
   flex-direction: column;

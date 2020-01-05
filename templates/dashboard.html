@@ -19,7 +19,7 @@
             <h2>Your Current Habits:</h2>
             <ul>
                 {% for habit in habits %}
-                    <li>Hello!</li>
+                    <li>{{ habit.habit }}</li>
                     <p>Done for {{ habit.daysDone }} Days</p>
                 {% endfor %}
             </ul>

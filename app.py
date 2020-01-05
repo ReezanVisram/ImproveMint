@@ -11,7 +11,7 @@ import os
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///productiondatabase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///developmentdatabase.db'
 
 Bootstrap(app)
 db = SQLAlchemy(app)
@@ -106,7 +106,7 @@ def login():
 @login_required
 def dashboard():
     tasks = Task.query.filter_by(userID=current_user.id).all()
-    habits = Task.query.filter_by(userID=current_user.id).all()
+    habits = Habit.query.filter_by(userID=current_user.id).all()
     return render_template('dashboard.html', name=current_user.username, tasks=tasks, habits=habits)
 
 @app.route('/logout')
