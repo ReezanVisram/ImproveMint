@@ -15,21 +15,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock styles %}
 
+{% block javascript %}
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+{% endblock javascript %}
+
 {% block navbar %}
 <nav class="main-nav">
-    <a href="/" class="site-title nav-links">Improve-Mint</a>
-    <a href="#" class="nav-links">About</a>
-    <a href="#" class="nav-links">Contact</a>
-
-    {% if current_user.is_authenticated %}
-        <a href="/dashboard" class="nav-links">My Dashboard</a>
-        <a href="/tasks" class="nav-links">My Tasks</a>
-        <a href="/habits" class="nav-links">My Habits</a>
-        <a href="/logout" class="nav-links">Logout</a>
-    {% else %}
-        <a href="/signup" class="nav-links">Sign Up</a>
-        <a href="/login" class="nav-links">Log In</a>
-    {% endif %}
+    <a href="/" class="site-title">Improve-Mint</a>
+    <ul class="nav-links">
+        <li><a href="#" >About</a></li>
+        <li><a href="#">Contact</a></li>
+    
+        {% if current_user.is_authenticated %}
+            <li><a href="/dashboard">My Dashboard</a></li>
+            <li><a href="/tasks">My Tasks</a></li>
+            <li><a href="/habits">My Habits</a></li>
+            <li><a href="/logout">Logout</a></li>
+        {% else %}
+            <li><a href="/signup">Sign Up</a></li>
+            <li><a href="/login">Log In</a></li>
+        {% endif %}
+    </ul>
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
 </nav>
-
 {% endblock navbar %}
