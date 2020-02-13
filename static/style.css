@@ -28,6 +28,10 @@
   font-size: 20px;
 }
 
+.navbar-links:hover{
+  color: white;
+}
+
 .nav-links li{
   list-style: none;
 }
@@ -99,6 +103,20 @@
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
+
+.link-button {
+  background-color: #2fe796;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+}
+
+.link-button:hover {
+  background-color: #30ad77;
+  text-decoration: none;
+  color: white;
+}
+
 
 .sign-in-container{
   display: flex;

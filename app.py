@@ -186,7 +186,9 @@ def updateHabitDay(id):
         else:
             habitToBeUpdated.lastDateUpdated = datetime.utcnow()
             habitToBeUpdated.daysDone += 1
+            db.session.commit()
             return redirect('/habits')
+            
 
 @app.route('/habits/delete/<int:id>', methods=["GET", "POST"])
 def deleteHabit(id):
