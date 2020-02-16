@@ -1,8 +1,13 @@
 # Improve-Mint
 A self-improvement website built on the Python framework Flask.
 
-# Running the website:
-1. Pull all files from the repository onto your local computer.
-1. Install all the requirements _(specified in requirements.txt)_ using _pip_ or manually.
-1. Navigate to the location with all the files in your command line and run "$ python app.py".
-1. By default the website will host at localhost:5000 so navigate there in your browser and begin your self-improvement journey today!
+### Installation
+* Requires Python 3.7+ to be installed on your PC.
+* Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all the necessary dependencies, which are listed in the _requirements.txt_ file.
+
+### Usage
+1. Save all the files from this repository into a specific directory.
+2. Open a command line and cd into that directory.
+3. Run the command `$ python app.py`
+4. Navigate to the URL location it gives you (deafult: localhost:5000)
+5. Create an account and begin your self-improvement journey today!
