@@ -9,5 +9,5 @@ A self-improvement website built on the Python framework Flask.
 1. Save all the files from this repository into a specific directory.
 2. Open a command line and cd into that directory.
 3. Run the command `$ python app.py`
-4. Navigate to the URL location it gives you (deafult: localhost:5000)
+4. Navigate to the URL location it gives you (default: localhost:5000)
 5. Create an account and begin your self-improvement journey today!
