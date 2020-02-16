@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock styles %}
 
-{% block javascript %}
-    <script src="{{ url_for('static', filename='main.js') }}"></script>
-{% endblock javascript %}
-
 {% block navbar %}
 <nav class="main-nav">
     <a href="/" class="site-title">Improve-Mint</a>
@@ -43,3 +39,7 @@
     </div>
 </nav>
 {% endblock navbar %}
+
+{% block scripts %}
+    <script src="/static/main.js"></script>
+{% endblock scripts %}

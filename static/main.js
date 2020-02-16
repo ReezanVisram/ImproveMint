@@ -21,5 +21,4 @@ const navSlide = () => {
     
 
 }
-
 navSlide();
