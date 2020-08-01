@@ -1,8 +1,0 @@
-/.vscode
-/env
-/__pycache__
-config.py
-*.pyc
-test.db
-productiondatabase.db
-Procfile
