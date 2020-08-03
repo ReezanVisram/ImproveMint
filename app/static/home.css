@@ -1,0 +1,250 @@
+.content-container {
+    display: flex;
+    height: 80vh;
+    background-color: #5CDB95;
+}
+
+.welcome-container {
+    color: #EDF5E1;
+    margin: 2.5% 10%;
+    text-align: center;
+}
+
+.welcome-container h1 {
+    font-size: 4rem;
+}
+
+.welcome-container p {
+    font-size: 2rem;
+}
+
+.features-container {
+    margin: 2.5% 0%;
+}
+
+.features-container h2 {
+    color :#05386B;
+}
+
+.welcome-container h3 {
+    font-size: 2rem;
+}
+
+.features-container ul {
+    font-size: 1.5rem;
+    list-style: none;
+    color: #05386B;
+}
+
+.get-started-container {
+    width: 100%;
+    text-align: center;
+}
+
+.home-signup-form-container {
+    background-color: #05386B;
+    color: #EDF5E1;
+    width: 30%;
+    margin: 2.5% 10%;
+    border: none;
+    height: 100%;
+}
+
+.home-signup-form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.home-signup-form-container form div {
+    width: 80%;
+    height: 10%;
+    margin-top: 2.5%;
+    font-size: 24px;
+}
+
+.home-signup-form-container form div input {
+    height: 100%;
+    width: 100%;
+}
+
+.name-div {
+    position: relative;
+    overflow: hidden;
+}
+
+.name-div input {
+    padding-top: 5%;
+    background-color: #05386B;
+    border: none;
+    font-size: 24px;
+    color: #EDF5E1;
+    outline: none;
+}
+
+.name-div input:focus + .label-name .content-name, 
+.name-div input:valid + .label-name .content-name {
+    transform: translateY(-225%);
+    font-size: 16px;
+    color: #5CDB95;
+}
+
+.name-div input:focus + .label-name::after, 
+.name-div input:valid + .label-name::after {
+    transform: translateX(0%);
+}
+
+.name-div label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: solid 1px #EDF5E1;
+}
+
+.name-div label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #5CDB95;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content-name {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.email-div {
+    position: relative;
+    overflow: hidden;
+}
+
+.email-div input {
+    padding-top: 5%;
+    background-color: #05386B;
+    border: none;
+    font-size: 24px;
+    color: #EDF5E1;
+    outline: none;
+}
+
+.email-div input:focus + .label-email .content-email, 
+.email-div input:valid + .label-email .content-email {
+    transform: translateY(-225%);
+    font-size: 16px;
+    color: #5CDB95;
+}
+
+.email-div input:focus + .label-email::after, 
+.email-div input:valid + .label-email::after {
+    transform: translateX(0%);
+}
+
+.email-div label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: solid 1px #EDF5E1;
+}
+
+.email-div label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #5CDB95;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content-email {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.password-div {
+    position: relative;
+    overflow: hidden;
+}
+
+.password-div input {
+    padding-top: 5%;
+    background-color: #05386B;
+    border: none;
+    font-size: 24px;
+    color: #EDF5E1;
+    outline: none;
+}
+
+.password-div input:focus + .label-password .content-password, 
+.password-div input:valid + .label-password .content-password {
+    transform: translateY(-225%);
+    font-size: 16px;
+    color: #5CDB95;
+}
+
+.password-div input:focus + .label-password::after, 
+.password-div input:valid + .label-password::after {
+    transform: translateX(0%);
+}
+
+.password-div label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: solid 1px #EDF5E1;
+}
+
+.password-div label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #5CDB95;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content-password {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.form-submit-button {
+    width: 100%;
+    height: 10%;
+    border: none;
+    background-color: #05386B;
+    font-size: 24px;
+    color: #EDF5E1;
+}
+
+.form-submit-button:hover {
+    cursor: pointer;
+    background-color: #052c53;
+}

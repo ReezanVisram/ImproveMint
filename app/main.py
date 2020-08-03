@@ -6,9 +6,6 @@ from app.Blueprints.Task.routes import taskBlueprint
 from app.Blueprints.Habit.routes import habitBlueprint
 
 app = Flask(__name__)
-db.init_app(app)
-
-
 if (app.config['ENV'] == 'production'):
     app.config.from_object('config.ProductionConfig')
 
@@ -17,6 +14,14 @@ elif (app.config['ENV'] == 'testing'):
 
 else:
     app.config.from_object('config.DevelopmentConfig')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://{}:{}@{}/{}'.format(app.config['DATABASE_USERNAME'], app.config['DATABASE_PASSWORD'], app.config['DATABASE_HOST'], app.config['DATABASE_NAME'])
+db.init_app(app)
+
+
+
+
+
 
 @app.route('/')
 def homeRoute():

@@ -6,13 +6,17 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color: #5CDB95;
+}
+
 a {
     text-decoration: none;
 }
 
 header nav {
     display: flex;
-    background-color: #00de73;
+    background-color: #5CDB95;
 }
 
 header nav h1 {
@@ -41,5 +45,9 @@ header nav div ul li {
 }
 
 .header-link {
-    color: #a0a0a0;
+    color: #05386B;
+}
+
+.header-link:hover {
+    color: #052c53;
 }
