@@ -4,6 +4,7 @@ from app.Models import db
 from app.Blueprints.User.routes import userBlueprint
 from app.Blueprints.Task.routes import taskBlueprint
 from app.Blueprints.Habit.routes import habitBlueprint
+from app.Blueprints.Dashboard.routes import dashboardBlueprint
 
 app = Flask(__name__)
 if (app.config['ENV'] == 'production'):
@@ -27,6 +28,7 @@ db.init_app(app)
 def homeRoute():
     return render_template('home.html')
 
+app.register_blueprint(dashboardBlueprint, url_prefix='/dashboard')
 app.register_blueprint(userBlueprint, url_prefix='/user')
 app.register_blueprint(taskBlueprint, url_prefix='/task')
 app.register_blueprint(habitBlueprint, url_prefix='/habit')

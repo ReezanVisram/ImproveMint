@@ -32,7 +32,7 @@ def loginDataRoute():
     if (currUser):
         if (check_password_hash(currUser.password, request.form['password'])):
             session['userId'] = currUser.id
-            return redirect(url_for('userBlueprint.dashboardRoute'))
+            return redirect(url_for('dashboardBlueprint.dashboardRoute'))
 
         return redirect(url_for('userBlueprint.loginRoute', error='Incorrect Password'))
 
@@ -43,8 +43,4 @@ def logoutRoute():
     session['userId'] = None
     return redirect(url_for('homeRoute'))
 
-@userBlueprint.route('/dashboard')
-def dashboardRoute():
-    currUser = User.query.filter_by(id=session['userId']).first()
-    return render_template('dashboard.html', name=currUser.username)
 
