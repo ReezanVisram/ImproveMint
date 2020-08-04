@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect, render_template, request, url_for
+from flask import Blueprint, redirect, render_template, request, url_for, session
 from app.Models.User import User
 from app.Models import db
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -6,26 +6,45 @@ from werkzeug.security import generate_password_hash, check_password_hash
 userBlueprint = Blueprint('userBlueprint', __name__,
                           template_folder='pages', static_folder='static')
 
-@userBlueprint.route('/signUp', methods=["GET"])
+@userBlueprint.route('/signUp', methods=["GET", "POST"])
 def signUpRoute():
-    return render_template('signUp.html')
+    return render_template('signUp.html', error=request.args.get('error'))
 
-@userBlueprint.route('/signUpDataRoute', methods=["POST"])
+@userBlueprint.route('/signUpData', methods=["POST"])
 def signUpDataRoute():
     if (User.query.filter_by(email=request.form['email']).first()):
-        return render_template('signUp.html', error='A user with that email already exists.')
+        return redirect(url_for('userBlueprint.signUpRoute', error='Email Exists'))
+
+    u = User(username=request.form['name'], email=request.form['email'], password=generate_password_hash(request.form['password'], method='sha256'))
+    db.session.add(u)
+    db.session.commit()
     
 
-    print('Name sent is ' + request.form['name'])
-    print('Email sent is ' + request.form['email'])
-    print('Password sent is ' + request.form['password'])
+    return redirect(url_for('userBlueprint.loginRoute', error=None))
 
-    try:
-        u = User(username=request.form['name'], email=request.form['email'], password=generate_password_hash(request.form['password'], method='sha256'))
-        db.session.add(u)
-        db.session.commit()
-    
-    except Exception as e:
-        return render_template('signUp.html', error=e)
+@userBlueprint.route('/login', methods=["GET", "POST"])
+def loginRoute():
+    return render_template('login.html', error=request.args.get('error'))
 
+@userBlueprint.route('/loginData', methods=["POST"])
+def loginDataRoute():
+    currUser = User.query.filter_by(email=request.form['email']).first()
+    if (currUser):
+        if (check_password_hash(currUser.password, request.form['password'])):
+            session['id'] = currUser.id
+            return redirect(url_for('userBlueprint.dashboardRoute'))
+
+        return redirect(url_for('userBlueprint.loginRoute', error='Incorrect Password'))
+
+    return redirect(url_for('userBlueprint.loginRoute', error='Incorrect Email'))
+
+@userBlueprint.route('/logout')
+def logoutRoute():
+    session['id'] = None
     return redirect(url_for('homeRoute'))
+
+@userBlueprint.route('/dashboard')
+def dashboardRoute():
+    currUser = User.query.filter_by(id=session['id']).first()
+    return render_template('dashboard.html', name=currUser.username)
+

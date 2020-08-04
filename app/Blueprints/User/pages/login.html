@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="login-form-container">
+  <div class="home-signup-form-container">
+    <div class="get-started-container">
+        <h1>Log in to ImproveMint</h1>
+    </div>
+  
+    <form action="/user/loginData" method="POST">  
+        <div class="email-div">
+            <input type="text" name="email" required autocomplete="noemail" /> 
+            <label for="email" class="label-email">
+                <span class="content-email">Email</span>
+            </label>
+        </div>
+  
+        <div class="password-div">
+            <input type="password" name="password" required autocomplete="off" /> 
+            <label for="password" class="label-password">
+                <span class="content-password">Password</span>
+            </label>
+        </div>
+  
+        <a href="/user/signUp">Don't have an account? Sign Up!</a>
+
+        <input type="submit" value="Login" class="form-submit-button" /> 
+    </form>
+  </div>
+  
+  {% if error %}
+    <p>{{ error }}</p>
+  {% endif %}
+
+  </div>
+  {% endblock content %}
+</div>
