@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, session
 from app.Models import db
 
 from app.Blueprints.User.routes import userBlueprint
@@ -18,11 +18,6 @@ else:
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://{}:{}@{}/{}'.format(app.config['DATABASE_USERNAME'], app.config['DATABASE_PASSWORD'], app.config['DATABASE_HOST'], app.config['DATABASE_NAME'])
 db.init_app(app)
-
-
-
-
-
 
 @app.route('/')
 def homeRoute():

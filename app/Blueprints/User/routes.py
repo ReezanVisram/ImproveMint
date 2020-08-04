@@ -32,7 +32,7 @@ def loginDataRoute():
     if (currUser):
         if (check_password_hash(currUser.password, request.form['password'])):
             session['userId'] = currUser.id
-            return redirect(url_for('dashboardBlueprint.dashboardRoute'))
+            return redirect(url_for('dashboardBlueprint.dashboardHomeRoute'))
 
         return redirect(url_for('userBlueprint.loginRoute', error='Incorrect Password'))
 
