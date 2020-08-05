@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="habit-title-container">
+        <h1>The Habits you want to Build</h1>
+    </div>
+
+    <div class="habit-list-container">
+        {% for habit in habits %}
+            <div class="individual-habit-container">
+                <div class="individual-habit-content-container">
+                    <p class="habit-info-p">{{ habit.habit }}. <br> 
+                        Done for {{ habit.daysDone }}
+                        {% if habit.daysDone == 1 %} 
+                             Day.
+                        {% else %}
+                            Days.
+                        {% endif %}
+                    </p>
+                    <div>
+                        {% if habit.ableToBeUpdated %}
+                            <button class="mark-as-complete-button">Mark as Complete Today</button>
+    
+                        {% else %}
+                            <p class="habit-info-p">Already Completed Today!</p>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <progress value="{{ habit.daysDone }}" max="{{ habit.dayGoal }}"></progress>
+                    </div>
+
+                </div>
+                <p class="x-icon" id="{{ habit.id }}" onclick="deleteHabit('{{ habit.id }}')">&#10006</p> 
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="add-habit-button-container">
+        <button id="add-habit-button"> + Add Habit</button>
+    </div>
+
+    <div class="add-habit-form-container">
+        <form action="/habit/createHabitData" method="POST" hidden id="add-habit-form" >
+            <div class="habit-div">
+                <input type="text" name="habit" required autocomplete="noname" />
+                <label for="habit" class="label-habit">
+                  <span class="content-habit">Habit</span>
+                </label>
+              </div>
+        
+              <div class="dayGoal-div">
+                <input type="number" name="dayGoal" required autocomplete="noemail" />
+                <label for="dayGoal" class="label-dayGoal">
+                  <span class="content-dayGoal">Day Goal</span>
+                </label>
+              </div>
+            <input type="submit" value="Submit" class="habit-form-submit">
+        </form>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{{ url_for('habitBlueprint.static', filename='deleteHabit.js') }}"></script>
+    <script src="{{ url_for('habitBlueprint.static', filename='addHabit.js') }}"></script>
+{% endblock scripts %}

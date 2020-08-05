@@ -1,0 +1,223 @@
+.habit-title-container {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    background-color: #05386B;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.habit-title-container h1 {
+    color: #EDF5E1;
+}
+
+.habit-list-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.individual-habit-container {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    background-color: #EDF5E1;
+    border-bottom: 4px solid #05386B;
+    text-align: center;
+}
+
+.individual-habit-content-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 100;
+}
+
+.individual-habit-container .habit-info-p {
+    color: #05386B;
+    font-size: 1.5rem;
+}
+
+.mark-as-complete-button {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #05386B;
+    border-top: 1px solid #05386B;
+    outline: none;
+    color: #05386B;
+    font-size: 1.25rem;
+}
+
+.mark-as-complete-button:hover {
+    cursor: pointer;
+    background-color: #d3dbc6;
+}
+
+.x-icon {
+    margin: .5%;
+    color: #05386B;
+}
+
+.x-icon:hover {
+    color: black;
+    cursor: pointer;
+    scrollbar-highlight-color: none;
+}
+
+.add-habit-button-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.add-habit-button-container button {
+    border: none;
+    background: none;
+    outline: none;
+    color: #05386B;
+    font-size: 1.5rem;
+}
+
+.add-habit-button-container button:hover {
+    cursor: pointer;
+    color: #041a30;
+}
+
+.add-habit-form-container {
+    margin-top: 1%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.habit-div {
+    position: relative;
+    overflow: hidden;
+}
+
+.habit-div input {
+    padding-top: 5%;
+    background-color: #5CDB95;
+    border: none;
+    font-size: 24px;
+    color: #EDF5E1;
+    outline: none;
+    color: #05386B;
+}
+
+.habit-div input:focus + .label-habit .content-habit, 
+.habit-div input:valid + .label-habit .content-habit {
+    transform: translateY(-100%);
+    font-size: 16px;
+    color: #05386B;
+}
+
+.habit-div input:focus + .label-habit::after, 
+.habit-div input:valid + .label-habit::after {
+    transform: translateX(0%);
+}
+
+.habit-div label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: solid 1px #EDF5E1;
+}
+
+.habit-div label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #05386B;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content-habit {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.dayGoal-div {
+    position: relative;
+    overflow: hidden;
+}
+
+.dayGoal-div input {
+    padding-top: 5%;
+    background-color: #5CDB95;
+    border: none;
+    font-size: 24px;
+    color: #EDF5E1;
+    outline: none;
+    color: #05386B;
+}
+
+.dayGoal-div input:focus + .label-dayGoal .content-dayGoal, 
+.dayGoal-div input:valid + .label-dayGoal .content-dayGoal {
+    transform: translateY(-100%);
+    font-size: 16px;
+    color: #05386B;
+}
+
+.dayGoal-div input:focus + .label-dayGoal::after, 
+.dayGoal-div input:valid + .label-dayGoal::after {
+    transform: translateX(0%);
+}
+
+.dayGoal-div label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: solid 1px #EDF5E1;
+}
+
+.dayGoal-div label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #05386B;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content-dayGoal {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.habit-form-submit {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1.5rem;
+    color: #05386B;
+    background-color: #5CDB95;
+    width: 100%;
+}
+.habit-form-submit:hover {
+    cursor: pointer;
+    background-color: #47aa74;
+}
