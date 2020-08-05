@@ -40,6 +40,7 @@ def loginDataRoute():
 
 @userBlueprint.route('/logout')
 def logoutRoute():
+    print(session['userId'])
     session['userId'] = None
     return redirect(url_for('homeRoute'))
 

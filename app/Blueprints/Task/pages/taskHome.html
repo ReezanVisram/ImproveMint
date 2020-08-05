@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<div class="task-title-container">
+    <h1>Your Tasks</h1>
+</div>
+
+<div class="task-list-container">
+    <ul>
+        {% for task in tasks %}
+        <div class="individual-task-container">
+            <li>{{ task.task }}</li>
+        </div>
+
+        {% endfor %}
+    </ul>
+</div>
+
+<form action="/task/createTaskData" method="POST">
+    <input type="text" name="task" placeholder="task" autocomplete="off" />
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock content %}
