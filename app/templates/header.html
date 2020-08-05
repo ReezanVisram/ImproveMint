@@ -4,15 +4,16 @@
         <div class="spacer"></div>
         <div>
             <ul>
-                {% if session['userId'] is none %}
-                    <li><a class="header-link" href="/user/signUp">Sign Up</a></li>
-                    <li><a class="header-link login-link" href="/user/login">Login</a></li>
-                 {% else %}
+                {% if 'userId' in session and session['userId'] is not none %}
                     <li><a class="header-link" href="/dashboard">Dashboard</a></li>
                     <li><a class="header-link" href="/task">Tasks</a></li>
                     <li><a class="header-link" href="/habit">Habits</a></li>
                     <li><a class="header-link" href="/goal">Goals</a></li>
                     <li><a class="header-link login-link" href="/user/logout">Logout</a></li>
+
+                {% else %}
+                    <li><a class="header-link" href="/user/signUp">Sign Up</a></li>
+                    <li><a class="header-link login-link" href="/user/login">Login</a></li>
 
                 {% endif %}
             </ul>

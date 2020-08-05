@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, session, request
+from flask import Blueprint, render_template, redirect, url_for, session, request, jsonify
 from app.Models import db
 
 from app.Models.Task import Task
@@ -19,3 +19,13 @@ def createTaskDataRoute():
         db.session.add(currTask)
         db.session.commit()
     return redirect(url_for('taskBlueprint.taskHomeRoute'))
+
+@taskBlueprint.route('/delete', methods=["POST"])
+def deleteTaskRoute():
+    json = request.get_json()
+
+    taskToDelete = Task.query.filter_by(id=json['id']).first()
+    db.session.delete(taskToDelete)
+    db.session.commit()
+
+    return jsonify({'status': 1})

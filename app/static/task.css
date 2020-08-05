@@ -7,5 +7,134 @@
 
 .task-title-container {
     width: 100%;
-    
+    height: 10vh;
+    display: flex;
+    background-color: #05386B;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.task-title-container h1 {
+    color: #EDF5E1;
+}
+
+.task-list-container {
+    width: 100%;
+}
+
+.individual-task-container {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #EDF5E1;
+    border-bottom: 4px solid #05386B;
+}
+
+.individual-task-container p {
+    color: #05386B;
+    font-size: 2rem;
+}
+
+.individual-task-container:hover {
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+.add-task-button-container {
+    margin-top: 1%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.add-task-button-container button {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1.5rem;
+    color: #05386B;
+}
+
+.add-task-button-container button:hover {
+    cursor: pointer;
+    color: #041a30;
+}
+
+.add-task-form-container {
+    width: 100%;
+    height: 7.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#add-task-form {
+    position: relative;
+    overflow: hidden;
+}
+
+#add-task-form .task-input {
+    background-color: #5CDB95;
+    border: none;
+    font-size: 18px;
+    color: #05386B;
+    outline: none;
+    height: 80%;
+}
+
+#add-task-form .task-input:focus + .label-task .content-task,
+#add-task-form .task-input:valid + .label-task .content-task {
+    transform: translateY(-175%);
+    font-size: 16px;
+    color: #05386B;
+}
+
+#add-task-form .task-input:focus + .label-task::after,
+#add-task-form .task-input:valid + .label-task::after {
+    transform: translateX(0%);
+}
+
+#add-task-form label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: solid 1px #05386B;
+}
+
+#add-task-form label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #05386B;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content-task {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.submit-task-form-button {
+    background-color: #5CDB95;
+    color: #05386B;
+    font-size: 1.25rem;
+    border: none;
+    outline: none;
+}
+
+.submit-task-form-button:hover {
+    cursor: pointer;
+    color: #041a30;
 }

@@ -1,22 +1,39 @@
-{% extends "base.html" %} {% block content %}
-<div class="task-title-container">
-    <h1>Your Tasks</h1>
-</div>
+{% extends "base.html" %} 
 
-<div class="task-list-container">
-    <ul>
+
+{% block content %}
+    <div class="task-title-container">
+        <h1>Your Tasks</h1>
+    </div>
+
+    <div class="task-list-container">
         {% for task in tasks %}
-        <div class="individual-task-container">
-            <li>{{ task.task }}</li>
-        </div>
-
+            <div class="individual-task-container" id="{{ task.id }}" onclick="deleteTask('{{ task.id }}')">
+                <p>{{ task.task }}</p>
+            </div>
         {% endfor %}
-    </ul>
-</div>
+    </div>
 
-<form action="/task/createTaskData" method="POST">
-    <input type="text" name="task" placeholder="task" autocomplete="off" />
-    <input type="submit" value="Submit" />
-</form>
+    <div class='add-task-button-container'>
+        <button id="add-task-button">+ Add Task</button>
+    </div>
+
+    <div class="add-task-form-container">
+        <form action="/task/createTaskData" method="POST" id="add-task-form" hidden>
+            <input type="text" name="task" required autocomplete="off" class='task-input'>
+            <label for="task" class="label-task">
+                <span class="content-task">Task</span>
+            </label>
+
+            <input type="submit" value="Add Task" class="submit-task-form-button">
+        </form> 
+    </div>
+
 
 {% endblock content %}
+
+
+{% block scripts %}
+    <script src="{{ url_for('taskBlueprint.static', filename='addTask.js') }}"></script>
+    <script src="{{ url_for('taskBlueprint.static', filename='deleteTask.js') }}"></script>   
+{% endblock scripts %}
