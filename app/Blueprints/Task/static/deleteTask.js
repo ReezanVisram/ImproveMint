@@ -12,7 +12,7 @@ const clientSideDeleteTask = (id) => {
 }
 
 const deleteTask = (id) => {
-    fetch('/task/delete', {
+    fetch('/improvemint/task/delete', {
         method: "POST",
         headers: new Headers({
             "Accept": "application/json",
