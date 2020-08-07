@@ -6,3 +6,4 @@ class Task(db.Model):
     task = db.Column(db.String(256))
     taskDate = db.Column(db.DateTime, index=True, default=datetime.now)
     userID = db.Column(db.Integer, db.ForeignKey('user.id'))
+    completed = db.Column(db.Boolean, default=False)

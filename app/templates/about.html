@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="about-container">
+    <h1>About ImproveMint.</h1>
+    <h2>A self improvement platform built with Python (Flask)</h2>
+    <p>ImproveMint was <a href="http://www.reezanvisram.com">my</a> first ever web-development project.</p>
+    <p>It taught me the basics of HTML, CSS, JavaScript and MySQL, as well as how basic web-development works. (HTTP
+        requests, sessions, databases, etc.)</p>
+    <p>Since the first version of ImproveMint, my knowledge of web-development has grown exponentially, causing me to
+        return to this project and refactor the code to make it modular, as well as improve the frontend design and the backend code.</p>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='sideMenu.js') }}"></script>
+{% endblock scripts %}

@@ -21,7 +21,7 @@
             <h3>Sound useful? Get Started!</h3>
         </div>
     
-        <div class="spacer"></div>
+        <div class="home-spacer"></div>
 
         <div class="home-signup-form-container">
             <div class="get-started-container">
@@ -54,6 +54,8 @@
             </form>
         </div>
     </div>
-
-
 {% endblock content %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='sideMenu.js') }}"></script>
+{% endblock scripts %}

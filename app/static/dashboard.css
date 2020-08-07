@@ -1,0 +1,28 @@
+.dashboard-header-container {
+    width: 100%;
+    text-align: center;
+}
+
+.dashboard-header-container h1 {
+    color: #05386B;
+    font-size: 2rem;
+}
+
+.dashboard-content-container {
+    display: flex;
+    margin-top: 2vh;
+}
+
+.task-list {
+    width: 40%;
+    margin-left: 5%;
+}
+
+.habit-list {
+    width: 40%;
+    margin-right: 5%;
+}
+
+.dashboard-spacer {
+    flex-grow: 100;
+}

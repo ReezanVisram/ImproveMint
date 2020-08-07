@@ -1,0 +1,40 @@
+footer {
+    border-top: 2px solid #05386B;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-info-container {
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.site-info-container {
+    color: #EDF5E1;
+}
+
+.github-link-container {
+    text-align: center;
+}
+
+.github-link-container h2 a {
+    color: #05386B;
+}
+
+.links-container ul {
+    list-style: none;
+    text-align: center;
+}
+
+.links-container ul li a {
+    color: #05386B;
+    font-size: 1.5rem;
+}
+
+.copyright-info-container {
+    width: 100%;
+    text-align: center;
+    color: #EDF5E1;
+}

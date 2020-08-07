@@ -1,6 +1,6 @@
 .content-container {
     display: flex;
-    height: 80vh;
+    height: 90vh;
     background-color: #5CDB95;
 }
 
@@ -44,10 +44,15 @@
 .home-signup-form-container {
     background-color: #05386B;
     color: #EDF5E1;
-    width: 30%;
+    width: 30vw;
     margin: 2.5% 10%;
     border: none;
-    height: 100%;
+    height: 70vh;
+}
+
+
+.home-spacer {
+    flex-grow: 100;
 }
 
 .home-signup-form-container form {
@@ -86,7 +91,7 @@
 
 .name-div input:focus + .label-name .content-name, 
 .name-div input:valid + .label-name .content-name {
-    transform: translateY(-225%);
+    transform: translateY(-200%);
     font-size: 16px;
     color: #5CDB95;
 }
@@ -141,7 +146,7 @@
 
 .email-div input:focus + .label-email .content-email, 
 .email-div input:valid + .label-email .content-email {
-    transform: translateY(-225%);
+    transform: translateY(-200%);
     font-size: 16px;
     color: #5CDB95;
 }
@@ -247,4 +252,20 @@
 .form-submit-button:hover {
     cursor: pointer;
     background-color: #052c53;
+}
+
+@media (max-width: 1256px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .home-spacer {
+        display: none;
+    }
+
+    .home-signup-form-container {
+        margin: auto;
+        width: 70vw;
+        height: 40vh;
+    }
 }

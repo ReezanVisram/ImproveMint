@@ -1,10 +1,11 @@
 .habit-title-container {
     width: 100%;
-    height: 15vh;
+    height: 10vh;
     display: flex;
     background-color: #05386B;
     align-items: center;
     justify-content: space-around;
+    text-align: center;
 }
 
 .habit-title-container h1 {
@@ -26,6 +27,7 @@
     background-color: #EDF5E1;
     border-bottom: 4px solid #05386B;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .individual-habit-content-container {
@@ -35,6 +37,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 100;
+
 }
 
 .individual-habit-container .habit-info-p {
@@ -220,4 +223,10 @@
 .habit-form-submit:hover {
     cursor: pointer;
     background-color: #47aa74;
+}
+
+@media (max-width: 1256px) {
+    .habit-title-container h1 {
+        font-size: 1.5em;
+    }
 }

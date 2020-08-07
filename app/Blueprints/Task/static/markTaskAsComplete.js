@@ -11,8 +11,8 @@ const clientSideDeleteTask = (id) => {
     divToDelete.parentNode.removeChild(divToDelete);
 }
 
-const deleteTask = (id) => {
-    fetch('/task/delete', {
+const markTaskAsComplete = (id) => {
+    fetch('/task/markAsComplete', {
         method: "POST",
         headers: new Headers({
             "Accept": "application/json",

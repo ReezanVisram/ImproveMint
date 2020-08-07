@@ -1,5 +1,66 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="dashboard-header-container">
     <h1>Welcome {{ name }}</h1>
+</div>
+
+<div class="dashboard-content-container">
+    <div class="task-list">
+        <div class="task-title-container">
+            <h1>Your Tasks</h1>
+        </div>
+        <div class="task-list-container">
+            {% for task in tasks %}
+            <div class="individual-task-container" id="{{ task.id }}" onclick="deleteTask('{{ task.id }}')">
+                <p>{{ task.task }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="dashboard-spacer"></div>
+
+    <div class="habit-list">
+        <div class="habit-title-container">
+            <h1>The Habits you want to Build</h1>
+        </div>
+        <div class="habit-list-container">
+            {% for habit in habits %}
+            <div class="individual-habit-container">
+                <div class="individual-habit-content-container">
+                    <p class="habit-info-p">{{ habit.habit }}. <br>
+                        Done for {{ habit.daysDone }}
+                        {% if habit.daysDone == 1 %}
+                        Day.
+                        {% else %}
+                        Days.
+                        {% endif %}
+                    </p>
+                    <div>
+                        {% if habit.ableToBeUpdated %}
+                        <button class="mark-as-complete-button">Mark as Complete Today</button>
+
+                        {% else %}
+                        <p class="habit-info-p">Already Completed Today!</p>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <progress value="{{ habit.daysDone }}" max="{{ habit.dayGoal }}"></progress>
+                    </div>
+
+                </div>
+                <p class="x-icon" id="{{ habit.id }}" onclick="deleteHabit('{{ habit.id }}')">&#10006</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 {% endblock content %}
+
+{% block scripts %}
+<script src="{{ url_for('habitBlueprint.static', filename='deleteHabit.js') }}"></script>
+<script src="{{ url_for('taskBlueprint.static', filename='deleteTask.js') }}"></script>
+<script src="{{ url_for('static', filename='sideMenu.js') }}"></script>
+{% endblock scripts %}

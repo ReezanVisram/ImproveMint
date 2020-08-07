@@ -8,7 +8,9 @@ taskBlueprint = Blueprint('taskBlueprint', __name__,
 
 @taskBlueprint.route('/')
 def taskHomeRoute():
-    currUserTasks = Task.query.filter_by(userID=session['userId']).all()
+    allTasks = Task.query.filter_by(userID=session['userId']).all()
+
+    currUserTasks = [i for i in allTasks if not i.completed]
 
     return render_template('taskHome.html', tasks=currUserTasks)
 
@@ -19,6 +21,23 @@ def createTaskDataRoute():
         db.session.add(currTask)
         db.session.commit()
     return redirect(url_for('taskBlueprint.taskHomeRoute'))
+
+@taskBlueprint.route('/markAsComplete', methods=["POST"])
+def markTaskAsCompleteRoute():
+    json = request.get_json()
+
+    taskToUpdate = Task.query.filter_by(id=json['id']).first()
+    taskToUpdate.completed = True
+    db.session.commit()
+
+    return jsonify({'status': 1})
+
+@taskBlueprint.route('/completed')
+def completedRoute():
+    allTasks = Task.query.filter_by(userID=session['userId']).all()
+
+    completedTasks = [i for i in allTasks if i.completed]
+    return render_template('taskCompleted.html', tasks=completedTasks)
 
 @taskBlueprint.route('/delete', methods=["POST"])
 def deleteTaskRoute():

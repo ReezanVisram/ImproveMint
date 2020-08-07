@@ -5,17 +5,22 @@
 {% block styles %}
     <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sideMenu.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='signUp.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='task.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='habit.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
 {% endblock styles %}
 
 {% include "header.html" %}
+
+{% include "sideMenu.html" %}
 
 {% block content %}
 {% endblock content %}
 
 {% block scripts %}
 {% endblock scripts %}
-

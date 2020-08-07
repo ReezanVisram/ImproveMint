@@ -23,7 +23,7 @@
             </label>
         </div>
   
-        <a href="/user/signUp">Don't have an account? Sign Up!</a>
+        <a style="color: #EDF5E1;" href="/user/signUp">Don't have an account? Sign Up!</a>
 
         <input type="submit" value="Login" class="form-submit-button" /> 
     </form>
@@ -36,3 +36,7 @@
   </div>
   {% endblock content %}
 </div>
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='sideMenu.js') }}"></script>
+{% endblock scripts %}

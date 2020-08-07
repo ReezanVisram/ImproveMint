@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+
+
+{% block content %}
+    <div class="task-title-container">
+        <h1>Your Previously Completed Tasks</h1>
+    </div>
+
+    <div class="task-list-container">
+        {% for task in tasks %}
+            <div class="individual-task-container" id="{{ task.id }}" onclick="deleteTask('{{ task.id }}')">
+                <p>{{ task.task }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="completed-task-container" style="width: 100%; text-align: center;">
+        <h2><a href="/task/" style="color: #EDF5E1; text-decoration: underline;">Incomplete Tasks</a></h2>
+        <script src="{{ url_for('static', filename='sideMenu.js') }}"></script>
+    </div>
+
+
+
+{% endblock content %}
+
+
+{% block scripts %}
+    <script src="{{ url_for('taskBlueprint.static', filename='deleteTask.js') }}"></script>
+{% endblock scripts %}

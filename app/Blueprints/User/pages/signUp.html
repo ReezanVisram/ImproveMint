@@ -28,7 +28,7 @@
         </label>
       </div>
 
-      <a href="/user/login">Already have an account? Log in</a>
+      <a style="color: #EDF5E1;" href="/user/login">Already have an account? Log in</a>
 
       <input type="submit" value="Sign Up" class="form-submit-button" />
     </form>
@@ -40,3 +40,7 @@
 </div>
 
 {% endblock content %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='sideMenu.js') }}"></script>
+{% endblock scripts %}

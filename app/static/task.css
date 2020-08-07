@@ -26,6 +26,7 @@
     justify-content: space-around;
     background-color: #EDF5E1;
     border-bottom: 4px solid #05386B;
+    text-align: center;
 }
 
 .individual-task-container p {
@@ -134,3 +135,11 @@
     cursor: pointer;
     color: #041a30;
 }
+
+@media (max-width: 1256px) {
+    .individual-task-container p {
+        font-size: 1.25rem;
+    }
+
+}
+

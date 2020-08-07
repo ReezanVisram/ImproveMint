@@ -23,7 +23,12 @@ db.init_app(app)
 def homeRoute():
     return render_template('home.html')
 
+@app.route('/about')
+def aboutRoute():
+    return render_template('about.html')
+
 app.register_blueprint(dashboardBlueprint, url_prefix='/dashboard')
 app.register_blueprint(userBlueprint, url_prefix='/user')
 app.register_blueprint(taskBlueprint, url_prefix='/task')
 app.register_blueprint(habitBlueprint, url_prefix='/habit')
+

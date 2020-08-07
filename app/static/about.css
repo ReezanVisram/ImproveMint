@@ -1,0 +1,23 @@
+.about-container {
+    text-align: center;
+}
+
+.about-container h1 {
+    font-size: 4rem;
+    color: #EDF5E1;
+}
+
+.about-container h2 {
+    font-size: 3rem;
+    color: #EDF5E1;
+}
+
+.about-container p {
+    font-size: 1.5rem;
+    color: #05386B;
+}
+
+.about-container p a {
+    color: #EDF5E1;
+    text-decoration: underline;
+}
