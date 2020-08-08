@@ -8,31 +8,35 @@
         <h1>Log in to ImproveMint</h1>
     </div>
   
-    <form action="/user/loginData" method="POST">  
+    <form action="/improvemint/user/loginData" method="POST">  
         <div class="email-div">
             <input type="text" name="email" required autocomplete="noemail" /> 
             <label for="email" class="label-email">
-                <span class="content-email">Email</span>
+                {% if error|string() == 'Email'|string() %}
+                  <span class="content-email error">A user with that email does not exist.</span>
+                {% else %}
+                  <span class="content-email">Email</span>
+                {% endif %}
             </label>
         </div>
   
         <div class="password-div">
             <input type="password" name="password" required autocomplete="off" /> 
             <label for="password" class="label-password">
-                <span class="content-password">Password</span>
+                {% if error|string() == 'Password'|string() %}
+                  <span class="content-password error">Incorrect password.</span>
+                {% else %}
+                  <span class="content-password">Password</span>
+                {% endif %}
             </label>
         </div>
   
-        <a style="color: #EDF5E1;" href="/user/signUp">Don't have an account? Sign Up!</a>
+        <a style="color: #EDF5E1;" href="/improvemint/user/signUp">Don't have an account? Sign Up!</a>
 
         <input type="submit" value="Login" class="form-submit-button" /> 
     </form>
   </div>
   
-  {% if error %}
-    <p>{{ error }}</p>
-  {% endif %}
-
   </div>
   {% endblock content %}
 </div>

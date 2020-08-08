@@ -13,7 +13,7 @@ def signUpRoute():
 @userBlueprint.route('/signUpData', methods=["POST"])
 def signUpDataRoute():
     if (User.query.filter_by(email=request.form['email']).first()):
-        return redirect(url_for('userBlueprint.signUpRoute', error='Email Exists'))
+        return redirect(url_for('userBlueprint.signUpRoute', error='Email'))
 
     u = User(username=request.form['name'], email=request.form['email'], password=generate_password_hash(request.form['password'], method='sha256'))
     db.session.add(u)
@@ -34,9 +34,9 @@ def loginDataRoute():
             session['userId'] = currUser.id
             return redirect(url_for('dashboardBlueprint.dashboardHomeRoute'))
 
-        return redirect(url_for('userBlueprint.loginRoute', error='Incorrect Password'))
+        return redirect(url_for('userBlueprint.loginRoute', error='Password'))
 
-    return redirect(url_for('userBlueprint.loginRoute', error='Incorrect Email'))
+    return redirect(url_for('userBlueprint.loginRoute', error='Email'))
 
 @userBlueprint.route('/logout')
 def logoutRoute():

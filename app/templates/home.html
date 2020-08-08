@@ -37,11 +37,15 @@
                 </div>
 
                 <div class="email-div">
-                    <input type="text" name="email" required autocomplete="noemail" /> 
+                    <input type="text" name="email" required autocomplete="noemail" />
                     <label for="email" class="label-email">
-                        <span class="content-email">Email</span>
+                      {% if error %}
+                        <span class="content-email" id="content-email">A user with that email already exists</span>
+                      {% else %}
+                        <span class="content-email" id="content-email">Email</span>
+                      {% endif %}
                     </label>
-                </div>
+                  </div>
 
                 <div class="password-div">
                     <input type="password" name="password" required autocomplete="off" /> 
@@ -58,4 +62,5 @@
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='sideMenu.js') }}"></script>
+<script src="{{ url_for('userBlueprint.static', filename='inputErrors.js') }}"></script>
 {% endblock scripts %}

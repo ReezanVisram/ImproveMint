@@ -269,3 +269,7 @@
         height: 40vh;
     }
 }
+
+.error {
+    color: red !important;
+}
