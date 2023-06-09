@@ -1,3 +1,7 @@
 {
-    "python.pythonPath": "env\\Scripts\\pythonw.exe"
+  "python.pythonPath": "env\\Scripts\\pythonw.exe",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none"
 }

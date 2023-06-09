@@ -1,5 +1,6 @@
-from app.Models import db
+from Models import db
 from datetime import datetime
+
 
 class Habit(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -8,4 +9,4 @@ class Habit(db.Model):
     ableToBeUpdated = db.Column(db.Boolean, default=False)
     dayGoal = db.Column(db.Integer)
     daysDone = db.Column(db.Integer, index=True, default=1)
-    userID = db.Column(db.Integer, db.ForeignKey('user.id'))
+    userID = db.Column(db.Integer, db.ForeignKey("user.id"))

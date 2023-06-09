@@ -6,7 +6,7 @@
       <h1>Welcome to ImproveMint</h1>
     </div>
 
-    <form action="/improvemint/user/signUpData" method="POST">
+    <form action="/user/signUpData" method="POST">
       <div class="name-div">
         <input type="text" name="name" required autocomplete="noname" />
         <label for="name" class="label-name">
@@ -18,9 +18,11 @@
         <input type="text" name="email" required autocomplete="noemail" />
         <label for="email" class="label-email">
           {% if error %}
-            <span class="content-email error" id="content-email">A user with that email already exists</span>
+          <span class="content-email error" id="content-email"
+            >A user with that email already exists</span
+          >
           {% else %}
-            <span class="content-email" id="content-email">Email</span>
+          <span class="content-email" id="content-email">Email</span>
           {% endif %}
         </label>
       </div>
@@ -32,16 +34,15 @@
         </label>
       </div>
 
-      <a style="color: #EDF5E1;" href="/improvemint/user/login">Already have an account? Log in</a>
+      <a style="color: #edf5e1" href="/user/login"
+        >Already have an account? Log in</a
+      >
 
       <input type="submit" value="Sign Up" class="form-submit-button" />
     </form>
   </div>
-
 </div>
 
-{% endblock content %}
-
-{% block scripts %}
+{% endblock content %} {% block scripts %}
 <script src="{{ url_for('static', filename='sideMenu.js') }}"></script>
 {% endblock scripts %}

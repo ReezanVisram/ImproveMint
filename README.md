@@ -1,6 +1,6 @@
 # ImproveMint
 A self-improvement website built on the Python framework Flask.
-[ImproveMint](http://www.reezanvisram.com/improvemint)
+[ImproveMint](http://www.reezanvisram.com)
 
 # Features
 1. A Todo List to track your daily tasks, as well as view your previously completed tasks.

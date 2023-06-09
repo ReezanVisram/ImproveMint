@@ -1,27 +1,29 @@
 <header>
-    <nav>
-        <h1><a class="header-title" href="/improvemint">ImproveMint</a></h1>
-        <div class="header-spacer"></div>
-        <div>
-            <ul>
-                {% if 'userId' in session and session['userId'] is not none %}
-                    <li><a class="header-link" href="/improvemint/dashboard">Dashboard</a></li>
-                    <li><a class="header-link" href="/improvemint/task">Tasks</a></li>
-                    <li><a class="header-link" href="/improvemint/habit">Habits</a></li>
-                    <li><a class="header-link login-link" href="/improvemint/user/logout">Logout</a></li>
+  <nav>
+    <h1><a class="header-title" href="">ImproveMint</a></h1>
+    <div class="header-spacer"></div>
+    <div>
+      <ul>
+        {% if 'userId' in session and session['userId'] is not none %}
+        <li><a class="header-link" href="/dashboard">Dashboard</a></li>
+        <li><a class="header-link" href="/task">Tasks</a></li>
+        <li><a class="header-link" href="/habit">Habits</a></li>
+        <li>
+          <a class="header-link login-link" href="/user/logout">Logout</a>
+        </li>
 
-                {% else %}
-                    <li><a class="header-link" href="/improvemint/user/signUp">Sign Up</a></li>
-                    <li><a class="header-link login-link" href="/improvemint/user/login">Login</a></li>
+        {% else %}
+        <li><a class="header-link" href="/user/signUp">Sign Up</a></li>
+        <li><a class="header-link login-link" href="/user/login">Login</a></li>
 
-                {% endif %}
-            </ul>
-        </div>
+        {% endif %}
+      </ul>
+    </div>
 
-        <div class="hamburger-container" id="hamburger">
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-        </div>
-    </nav>
+    <div class="hamburger-container" id="hamburger">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+    </div>
+  </nav>
 </header>

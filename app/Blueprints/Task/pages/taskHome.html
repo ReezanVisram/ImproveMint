@@ -1,45 +1,51 @@
-{% extends "base.html" %} 
+{% extends "base.html" %} {% block content %}
+<div class="task-title-container">
+  <h1>Your Tasks</h1>
+</div>
 
+<div class="task-list-container">
+  {% for task in tasks %}
+  <div
+    class="individual-task-container"
+    id="{{ task.id }}"
+    onclick="markTaskAsComplete('{{ task.id }}')"
+  >
+    <p>{{ task.task }}</p>
+  </div>
+  {% endfor %}
+</div>
 
-{% block content %}
-    <div class="task-title-container">
-        <h1>Your Tasks</h1>
-    </div>
+<div class="add-task-button-container">
+  <button id="add-task-button">+ Add Task</button>
+</div>
 
-    <div class="task-list-container">
-        {% for task in tasks %}
-            <div class="individual-task-container" id="{{ task.id }}" onclick="markTaskAsComplete('{{ task.id }}')">
-                <p>{{ task.task }}</p>
-            </div>
-        {% endfor %}
-    </div>
+<div class="add-task-form-container">
+  <form action="/task/createTaskData" method="POST" id="add-task-form" hidden>
+    <input
+      type="text"
+      name="task"
+      required
+      autocomplete="off"
+      class="task-input"
+    />
+    <label for="task" class="label-task">
+      <span class="content-task">Task</span>
+    </label>
 
-    <div class='add-task-button-container'>
-        <button id="add-task-button">+ Add Task</button>
-    </div>
+    <input type="submit" value="Add Task" class="submit-task-form-button" />
+  </form>
+</div>
 
-    <div class="add-task-form-container">
-        <form action="/improvemint/task/createTaskData" method="POST" id="add-task-form" hidden>
-            <input type="text" name="task" required autocomplete="off" class='task-input'>
-            <label for="task" class="label-task">
-                <span class="content-task">Task</span>
-            </label>
+<div class="completed-task-container" style="width: 100%; text-align: center">
+  <h2>
+    <a href="/task/completed" style="color: #edf5e1; text-decoration: underline"
+      >Completed Tasks</a
+    >
+  </h2>
+</div>
 
-            <input type="submit" value="Add Task" class="submit-task-form-button">
-        </form> 
-    </div>
-
-    <div class="completed-task-container" style="width: 100%; text-align: center;">
-        <h2><a href="/improvemint/task/completed" style="color: #EDF5E1; text-decoration: underline;">Completed Tasks</a></h2>
-    </div>
-
-
-
-{% endblock content %}
-
-
-{% block scripts %}
-    <script src="{{ url_for('taskBlueprint.static', filename='addTask.js') }}"></script>
-    <script src="{{ url_for('taskBlueprint.static', filename='markTaskAsComplete.js') }}"></script>   
-    <script src="{{ url_for('static', filename='sideMenu.js') }}"></script>
+{% endblock content %} {% block scripts %}
+<script src="{{ url_for('taskBlueprint.static', filename='addTask.js') }}"></script>
+<script src="{{ url_for('taskBlueprint.static', filename='markTaskAsComplete.js') }}"></script>
+<script src="{{ url_for('static', filename='sideMenu.js') }}"></script>
 {% endblock scripts %}

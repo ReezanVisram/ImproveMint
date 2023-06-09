@@ -1,7 +1,7 @@
 <div class="side-menu" id="side-menu">
     <nav>
         <div class="side-menu-title-container">
-            <h1><a class="side-menu-title" href="/improvemint">ImproveMint</a></h1>
+            <h1><a class="side-menu-title" href="">ImproveMint</a></h1>
             <div class="side-menu-spacer"></div>
             <p style="color: #5CDB95; font-size: 1.5rem;" id="close-side-menu">&#10006</p>
         </div>
@@ -9,14 +9,14 @@
         <div>
             <ul class="side-menu-list">
                 {% if 'userId' in session and session['userId'] is not none %}
-                    <li><a class="side-menu-link" href="/improvemint/dashboard">Dashboard</a></li>
-                    <li><a class="side-menu-link" href="/improvemint/task">Tasks</a></li>
-                    <li><a class="side-menu-link" href="/improvemint/habit">Habits</a></li>
-                    <li><a class="side-menu-link login-link" href="/improvemint/user/logout">Logout</a></li>
+                    <li><a class="side-menu-link" href="/dashboard">Dashboard</a></li>
+                    <li><a class="side-menu-link" href="/task">Tasks</a></li>
+                    <li><a class="side-menu-link" href="/habit">Habits</a></li>
+                    <li><a class="side-menu-link login-link" href="/user/logout">Logout</a></li>
 
                 {% else %}
-                    <li><a class="side-menu-link" href="/improvemint/user/signUp">Sign Up</a></li>
-                    <li><a class="side-menu-link login-link" href="/improvemint/user/login">Login</a></li>
+                    <li><a class="side-menu-link" href="/user/signUp">Sign Up</a></li>
+                    <li><a class="side-menu-link login-link" href="/user/login">Login</a></li>
 
                 {% endif %}
             </ul>

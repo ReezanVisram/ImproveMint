@@ -12,7 +12,7 @@ const verifyResponse = (data) => {
 }
 
 const deleteHabit = (id) => {
-    fetch('/improvemint/habit/delete', {
+    fetch('/habit/delete', {
         method: "POST",
         headers: new Headers({
             "Accept": "application/json",

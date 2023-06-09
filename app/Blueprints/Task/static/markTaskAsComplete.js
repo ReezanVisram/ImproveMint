@@ -12,7 +12,7 @@ const clientSideDeleteTask = (id) => {
 }
 
 const markTaskAsComplete = (id) => {
-    fetch('/improvemint/task/markAsComplete', {
+    fetch('/task/markAsComplete', {
         method: "POST",
         headers: new Headers({
             "Accept": "application/json",
