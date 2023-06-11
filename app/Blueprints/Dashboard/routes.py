@@ -1,7 +1,7 @@
 from flask import Blueprint, session, render_template, redirect, url_for
-from Models.User import User
-from Models.Task import Task
-from Models.Habit import Habit
+from app.Models.User import User
+from app.Models.Task import Task
+from app.Models.Habit import Habit
 
 dashboardBlueprint = Blueprint(
     "dashboardBlueprint", __name__, template_folder="pages", static_folder="static"

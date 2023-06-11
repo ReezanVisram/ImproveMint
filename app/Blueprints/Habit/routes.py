@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, jsonify, session, request
-from Models import db
-from Models.Habit import Habit
+from app.Models import db
+from app.Models.Habit import Habit
 from datetime import datetime
 
 

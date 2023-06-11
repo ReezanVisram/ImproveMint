@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, session, request, jsonify
-from Models import db
+from app.Models import db
 
-from Models.Task import Task
+from app.Models.Task import Task
 
 taskBlueprint = Blueprint(
     "taskBlueprint", __name__, template_folder="pages", static_folder="static"
